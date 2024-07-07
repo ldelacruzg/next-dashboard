@@ -3,6 +3,7 @@ import { FaReact } from "react-icons/fa"
 import { RiDashboardFill, RiNextjsFill } from "react-icons/ri"
 import { SidebarMenuItem } from "."
 import { BsArrowCounterclockwise } from "react-icons/bs"
+import { MdCatchingPokemon } from "react-icons/md"
 
 const menuItems = [
   {
@@ -16,12 +17,18 @@ const menuItems = [
     title: "Counter",
     subtitle: "Counter Cliente Side",
     icon: <BsArrowCounterclockwise size={25} />
+  },
+  {
+    path: "/dashboard/pokemons",
+    title: "Pokemons",
+    subtitle: "Pokemons API",
+    icon: <MdCatchingPokemon size={25} />
   }
 ]
 
 export const Sidebar = () => {
   return (
-    <div id="menu" className="bg-gray-900 min-h-screen z-10 text-slate-300 left-0 h-screen overflow-y-scroll">
+    <div id="menu" className="bg-gray-900 min-h-screen z-10 text-slate-300 left-0">
       <div id="logo" className="my-4 px-6">
         <h1 className="flex gap-2 text-lg md:text-2xl font-bold text-white">
           <FaReact className="text-blue-500" />
