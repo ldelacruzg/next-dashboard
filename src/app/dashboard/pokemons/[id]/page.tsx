@@ -10,6 +10,11 @@ interface Props {
   }
 }
 
+export async function generateStaticParams() {
+  const params151Pokemons = Array.from({ length: 151 }).map((_, i) => ({ id: `${i + 1}` }));
+  return params151Pokemons;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id, name } = await getPokemon(params.id);
 
