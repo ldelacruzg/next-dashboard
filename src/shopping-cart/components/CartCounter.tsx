@@ -1,7 +1,6 @@
 'use client';
 
 import { useCounterStore } from "@/store";
-import { init } from "next/dist/compiled/webpack/webpack";
 import { useEffect } from "react";
 
 interface Props {

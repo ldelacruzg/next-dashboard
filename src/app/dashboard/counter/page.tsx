@@ -6,11 +6,19 @@ export const metadata: Metadata = {
   description: "Counter Server Side",
 }
 
-export default function CounterPage() {
+const getInitCount = async (): Promise<number> => {
+  const resp = await fetch("http://localhost:3000/api/counter");
+  const { count } = await resp.json() as { count: number };
+  return count;
+}
+
+export default async function CounterPage() {
+  const count = await getInitCount();
+
   return (
     <div className="flex flex-col items-center justify-center h-full">
       <span>Counter Page</span>
-      <CartCounter value={20} />
+      <CartCounter value={count} />
     </div>
   );
 }

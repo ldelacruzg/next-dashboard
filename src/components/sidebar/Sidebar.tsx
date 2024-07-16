@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { FaReact } from "react-icons/fa"
 import { RiDashboardFill, RiNextjsFill } from "react-icons/ri"
-import { SidebarMenuItem } from "."
+import { SidebarMenuItem } from ".."
 import { BsArrowCounterclockwise } from "react-icons/bs"
 import { MdCatchingPokemon } from "react-icons/md"
 
