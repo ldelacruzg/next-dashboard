@@ -1,24 +1,34 @@
 'use client';
 
-import { useState } from "react";
+import { useCounterStore } from "@/store";
+import { init } from "next/dist/compiled/webpack/webpack";
+import { useEffect } from "react";
 
 interface Props {
   value?: number;
 }
 
 export const CartCounter = ({ value = 0 }: Props) => {
-  const [counter, setCounter] = useState(value);
+  const counter = useCounterStore(state => state.count)
+  const increment = useCounterStore(state => state.inc)
+  const decrement = useCounterStore(state => state.dec)
+  const initCounter = useCounterStore(state => state.setInitialCount)
+
+  useEffect(() => {
+    initCounter(value);
+  }, [value, initCounter])
+
   return (
     <>
       <span className="text-9xl">{counter}</span>
       <div className="flex gap-2">
         <button
-          onClick={() => setCounter(counter - 1)}
+          onClick={decrement}
           className="rounded-xl bg-gray-900 p-4 text-white hover:bg-gray-600 transition-all duration-200">
           -1
         </button>
         <button
-          onClick={() => setCounter(counter + 1)}
+          onClick={increment}
           className="rounded-xl bg-gray-900 p-4 text-white hover:bg-gray-600 transition-all duration-200">
           +1
         </button>
