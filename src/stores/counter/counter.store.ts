@@ -30,5 +30,5 @@ const initializer: StateCreator<CounterStore> = (set) => ({
 })
 
 export const useCounterStore = create<CounterStore>()(
-  devtools(initializer)
+  devtools(initializer, { name: 'counter' })
 )

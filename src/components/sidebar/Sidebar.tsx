@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { FaReact } from "react-icons/fa"
+import { FaHeart, FaReact } from "react-icons/fa"
 import { RiDashboardFill, RiNextjsFill } from "react-icons/ri"
 import { SidebarMenuItem } from ".."
 import { BsArrowCounterclockwise } from "react-icons/bs"
@@ -23,6 +23,12 @@ const menuItems = [
     title: "Pokemons",
     subtitle: "Pokemons API",
     icon: <MdCatchingPokemon size={25} />
+  },
+  {
+    path: "/dashboard/pokemons/favorites",
+    title: "Favorite Pokemons",
+    subtitle: "Pokemons API",
+    icon: <FaHeart size={25} />
   }
 ]
 

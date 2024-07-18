@@ -1,6 +1,6 @@
 'use client';
 
-import { useCounterStore } from "@/store";
+import { useCounterStore } from "@/stores";
 import { useEffect } from "react";
 
 interface Props {

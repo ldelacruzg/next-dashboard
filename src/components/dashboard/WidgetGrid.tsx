@@ -1,6 +1,6 @@
 'use client';
 
-import { useCounterStore } from "@/store"
+import { useCounterStore } from "@/stores"
 import { SimpleWidget } from "./SmpleWidget"
 
 export const WidgetGrid = () => {
